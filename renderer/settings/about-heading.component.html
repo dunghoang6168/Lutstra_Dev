@@ -1,0 +1,8 @@
+@if (devMode.enabled()) {
+  About Lutstra
+} @else {
+  <button type="button" class="about-heading-button" aria-haspopup="dialog" (click)="dialogOpen.set(true)">About Lutstra</button>
+}
+@if (dialogOpen()) {
+  <app-dev-mode-dialog (cancelled)="dialogOpen.set(false)" (unlocked)="onUnlocked()" />
+}

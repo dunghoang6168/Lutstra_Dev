@@ -1,0 +1,13 @@
+// YouTube views in Folders; the rest comes from Folders' own stylesheet, listed beside this one.
+:host { display: contents; }
+.views-muted { color: var(--text-muted); }
+.views-count { font-family: var(--font-family-mono); font-variant-numeric: tabular-nums; }
+.views-error { max-width: 280px; font-size: var(--font-size-xs); color: var(--text-muted); }
+.views-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}

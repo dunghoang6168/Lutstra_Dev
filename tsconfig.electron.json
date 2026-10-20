@@ -1,0 +1,13 @@
+{
+  "extends": "../electron/tsconfig.json",
+  "include": [
+    "./electron/**/*.ts",
+    "./renderer/popularity/electron-popularity.gateway.ts",
+    "../electron/**/*.ts",
+    "../electron/**/*.cts",
+    "../src/desktop.d.ts",
+    "../src/app/core/models/**/*.ts",
+    "../src/app/core/contracts/**/*.ts",
+    "../src/app/core/desktop/desktop-api.ts"
+  ]
+}

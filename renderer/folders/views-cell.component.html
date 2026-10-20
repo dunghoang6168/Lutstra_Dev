@@ -1,0 +1,9 @@
+@if (entry(); as views) {
+  @if (views.status === 'unmatched') {
+    <span class="views-muted" [appTip]="tooltip(views)">No match</span>
+  } @else {
+    <span [appTip]="tooltip(views)">{{ format(views.views) }}</span>
+  }
+} @else {
+  <span class="views-muted" aria-label="Views not fetched">—</span>
+}

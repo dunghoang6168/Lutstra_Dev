@@ -1,0 +1,20 @@
+@if (views.progress(); as progress) {
+  <div class="scan-banner" role="status">
+    <div class="scan-info">
+      <div class="scan-title-row">
+        <span class="scan-status-badge">Fetching views</span>
+        <span class="scan-stats">
+          Searched: <strong class="views-count">{{ progress.done }}</strong> of <strong class="views-count">{{ progress.total }}</strong> tracks
+        </span>
+        <button type="button" class="btn-queue-folder" (click)="views.cancel()" aria-label="Stop fetching views">
+          <app-icon name="x" [size]="14" />
+          Stop
+        </button>
+      </div>
+    </div>
+    <div class="indeterminate-bar" role="progressbar" aria-label="Views fetched"
+      [attr.aria-valuenow]="progress.done" aria-valuemin="0" [attr.aria-valuemax]="progress.total">
+      <div class="views-fill" [style.transform]="'scaleX(' + (progress.total ? progress.done / progress.total : 0) + ')'"></div>
+    </div>
+  </div>
+}

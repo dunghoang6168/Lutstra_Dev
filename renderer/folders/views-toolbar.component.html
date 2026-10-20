@@ -1,0 +1,15 @@
+@if (views.error(); as error) {
+  <span class="views-error truncate" role="status" appTipOverflow>{{ error }}</span>
+}
+@if (showNoMatchFilter()) {
+  <button type="button" class="btn-action secondary" [attr.aria-pressed]="noMatchActive()"
+    (click)="toggleNoMatch()" [disabled]="!noMatchActive() && unmatched().length === 0"
+    aria-label="Show only tracks with no matching YouTube upload, in this folder and its subfolders">
+    No match <span class="views-count">({{ unmatched().length }})</span>
+  </button>
+}
+<button type="button" class="btn-action secondary" (click)="fetchMissing()" [disabled]="!!views.progress() || missingCount() === 0"
+  aria-label="Fetch YouTube views for tracks without them, in this folder and its subfolders">
+  <app-icon name="refresh-cw" [size]="16" />
+  Fetch missing views <span class="views-count">({{ missingCount() }})</span>
+</button>

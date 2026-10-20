@@ -1,0 +1,6 @@
+<button type="button" class="btn-queue-folder" (click)="fetch()"
+  [disabled]="!!views.progress() || folder().listedTrackIds().length === 0"
+  aria-label="Fetch YouTube views again for these files">
+  <app-icon name="refresh-cw" [size]="14" />
+  Fetch views
+</button>

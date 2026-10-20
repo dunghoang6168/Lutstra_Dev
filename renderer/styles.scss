@@ -1,0 +1,38 @@
+// The developer edition's global styles (angular.json full configuration, after src/styles.scss):
+// Music Roulette's rarity tokens and hologram.
+
+html[data-theme='dark'] {
+  /* Case-opening rarity tiers 1-4, for the developer Random folder reel only (CS:GO grade colours). */
+  --rarity-1: #b0c3d9;
+  --rarity-2: #4b69ff;
+  --rarity-3: #eb4b4b;
+  --rarity-4: #e4ae39;
+  /* Tier 5 (mythical) has no colour of its own: it cycles every hue (--holo-hue, one clock per
+     Music Roulette page, read as --holo-live), so it cannot pass for a single-colour tier on any screen. */
+  --rarity-holo: linear-gradient(90deg, #ff5f6d, #ffc371, #5fe08a, #4bc8ff, #a66bff, #ff5fd2);
+  --holo-l: 76%;
+  --holo-c: 0.17;
+}
+
+html[data-theme='light'] {
+  /* Rarity tiers, darkened to stay visible on light surfaces. */
+  --rarity-1: #64748b;
+  --rarity-2: #3550e0;
+  --rarity-3: #cc3333;
+  --rarity-4: #a87a10;
+  --rarity-holo: linear-gradient(90deg, #d63447, #c77a12, #1f9d55, #1f86c4, #7a45e0, #c42fa3);
+  --holo-l: 56%;
+  --holo-c: 0.2;
+}
+
+/* Developer Random folder: the mythical tier's hologram, a hue that cycles through every colour.
+   Registered so it can animate; shared by the reel and the result card. */
+@property --holo-hue {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 320;
+}
+@keyframes holo-cycle {
+  from { --holo-hue: 0; }
+  to { --holo-hue: 360; }
+}

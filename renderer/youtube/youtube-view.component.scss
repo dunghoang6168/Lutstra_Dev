@@ -1,0 +1,32 @@
+// Over the routed page in the content sheet; hidden (still playing) away from /youtube.
+// visibility, not display: a webview with display: none stops laying out and can break.
+:host {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: inherit;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// Ambient: the webview floats inside the glass sheet, below the floating header and above the dock.
+:host-context(.layout-liquid-glass) {
+  top: calc(var(--app-header-height) - var(--shell-gap) + var(--space-2));
+  inset-inline: var(--space-3);
+  bottom: calc(var(--ambient-dock-clearance, 0px) + var(--space-3));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+}
+
+:host(.active) {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+webview {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

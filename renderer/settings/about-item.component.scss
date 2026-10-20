@@ -1,0 +1,25 @@
+// The same box, label and value as Settings' other About items (a component made by ngComponentOutlet
+// does not take Settings' styles on its host).
+:host(.about-item) {
+  background: var(--bg-elevated);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-label {
+  font-size: var(--font-size-xs);
+  font-variant-caps: var(--type-label-variant);
+  letter-spacing: var(--type-label-tracking);
+  color: var(--text-muted);
+}
+
+.about-value {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.dev-mode-exit { align-self: flex-start; margin-top: var(--space-2); }
