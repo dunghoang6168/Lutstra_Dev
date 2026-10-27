@@ -2,4 +2,14 @@
   <span class="about-label">Developer mode</span>
   <span class="about-value">On</span>
   <button type="button" class="btn btn-secondary btn-sm dev-mode-exit" (click)="onExit()">Exit developer mode</button>
+  @if (canSetMaterial) {
+    <span class="about-label material-label">Window material (test, resets on restart)</span>
+    <div class="material-options" role="group" aria-label="Window material">
+      @for (option of materials; track option.value) {
+        <button type="button" class="btn btn-sm" [class.btn-primary]="material() === option.value"
+          [class.btn-secondary]="material() !== option.value" [attr.aria-pressed]="material() === option.value"
+          (click)="setMaterial(option.value)">{{ option.label }}</button>
+      }
+    </div>
+  }
 }
