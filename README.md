@@ -15,7 +15,7 @@ its own repository (github.com/dunghoang6168/Lutstra_Dev, private). The public r
   (Electron and mock gateways, `DevDesktopApi`).
 - `electron/index.ts` replaces `electron/dev-hooks.ts` (tsup.config.ts): `webviewTag`, the views service and
   its IPC, the YouTube webview. `electron/preload.ts` replaces `electron/dev-hooks-preload.ts`.
-- `tests/` run with the app's `npx vitest run`; `tsconfig.electron.json` type-checks `electron/`
+- Tests are written under `tests/`, run with the app's `npx vitest run`, then deleted: never committed (owner choice 2026-09-30); `tsconfig.electron.json` type-checks `electron/`
   (`npx tsc -p dev/tsconfig.electron.json --noEmit`); `ui-sweep-routes.json` adds these pages to
   `scripts/ui-sweep.cjs`; `scripts/popularity-report.mjs`.
 
