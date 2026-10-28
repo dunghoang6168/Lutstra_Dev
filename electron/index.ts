@@ -2,14 +2,14 @@ import type { BrowserWindow, WebPreferences } from 'electron';
 import type { DevContext } from '../../electron/dev-hooks.js';
 import { validIdArray } from '../../electron/ipc/ipc-validation.js';
 import { PopularityService } from './popularity.service.js';
-import { installYoutubeWebview } from './youtube-webview.js';
+import { installWebviews } from './webviews.js';
 
 /*
  * The developer edition's side of electron/dev-hooks.ts, swapped in by tsup.config.ts. It must export the
  * same names with the same types.
  */
 
-/** The YouTube Music page's webview; installYoutubeWebview() limits it to music.youtube.com. */
+/** The webview pages; installWebviews() limits each to its own site. */
 export const devWebPreferences: WebPreferences = { webviewTag: true };
 
 export function installDev({ database, getWindow, handle }: DevContext): void {
@@ -23,5 +23,5 @@ export function installDev({ database, getWindow, handle }: DevContext): void {
 }
 
 export function installDevWindow(window: BrowserWindow): void {
-  installYoutubeWebview(window);
+  installWebviews(window);
 }

@@ -1,0 +1,5 @@
+@for (site of sites; track site.id) {
+  @if (shown(site)) {
+    <dev-webview [site]="site" [active]="pageSite() === site" />
+  }
+}

@@ -1,0 +1,7 @@
+@if (!isDesktop) {
+  <div class="unavailable">
+    <span class="unavailable-icon" aria-hidden="true" [style.mask-image]="'url(' + site.icon + ')'"></span>
+    <h1>{{ site.label }} opens in the desktop app</h1>
+    <p>The page embeds {{ site.home }}, which the browser preview cannot show.</p>
+  </div>
+}

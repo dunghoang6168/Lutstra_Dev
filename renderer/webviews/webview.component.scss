@@ -1,4 +1,4 @@
-// Over the routed page in the content sheet; hidden (still playing) away from /youtube.
+// Over the routed page in the content sheet; hidden (still running) away from the site's page.
 // visibility, not display: a webview with display: none stops laying out and can break.
 :host {
   position: absolute;
@@ -24,7 +24,8 @@
   pointer-events: auto;
 }
 
-webview {
+// The webview is built in code, so it carries no encapsulation attribute.
+:host ::ng-deep webview {
   display: flex;
   width: 100%;
   height: 100%;

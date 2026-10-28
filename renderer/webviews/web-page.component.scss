@@ -22,3 +22,10 @@
 
   p { font-size: var(--font-size-sm); }
 }
+
+.unavailable-icon {
+  width: 48px;
+  height: 48px;
+  background: currentColor;
+  mask: center / contain no-repeat;
+}
